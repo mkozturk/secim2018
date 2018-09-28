@@ -342,15 +342,9 @@ if __name__ == "__main__":
     ffox = başlat(parametreler)
     sorgulama_aç(ffox, parametreler)
     
-    say = 0
-    for sc in seçim_çevresi_listesi(ffox, parametreler):
-        seçim_çevresi_seç(ffox, parametreler, sc)
-        say += len(ilçe_kurulu_listesi(ffox, parametreler))
-    
-    print(say)
-#    try:
-#        bütün_sonuçları_al(ffox, parametreler)
-#    except:
-#        sonil, sonilçe = sondurumoku(parametreler)
-#        print("Bağlantı sorunu! Son kaydedilen: ",sonil, sonilçe)
+    try:
+        bütün_sonuçları_al(ffox, parametreler)
+    except:
+        sonil, sonilçe = sondurumoku(parametreler)
+        print("Bağlantı sorunu! Son kaydedilen: ",sonil, sonilçe)
     ffox.close()
